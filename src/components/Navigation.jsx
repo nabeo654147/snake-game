@@ -1,8 +1,11 @@
-const Navigation = ({ length, difficulty = 3 ,onChangeDifficulty}) => {
-    const upVisibility = difficulty < 5 ? '' : 'is-hidden'
+import { defaultDifficulty, Difficulty } from "../components"
+
+const Navigation = ({ length, difficulty = defaultDifficulty ,onChangeDifficulty}) => {
+    const upVisibility = difficulty < Difficulty.length ? '' : 'is-hidden'
     const downVisibility = difficulty > 1 ? '' : 'is-hidden'
     const onUpDifficulty = () => onChangeDifficulty(difficulty + 1)
     const onDownDifficulty = () => onChangeDifficulty(difficulty - 1)
+    
 
   return (
     <div className="navigation">
